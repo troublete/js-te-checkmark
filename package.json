@@ -1,0 +1,30 @@
+{
+  "name": "te-checkmark",
+  "version": "0.0.0",
+  "description": "Checkmark button custom element",
+  "main": "te-checkmark.js",
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troublete/te-checkmark.git"
+  },
+  "keywords": [
+    "custom",
+    "element",
+    "checkmark",
+    "button"
+  ],
+  "author": "Willi Eßer <willi.esser@troublete.com>",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "env": [
+      "browser",
+      "node"
+    ]
+  }
+}
