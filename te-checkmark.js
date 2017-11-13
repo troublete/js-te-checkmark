@@ -1,6 +1,8 @@
 class TeCheckmark extends HTMLElement {
 	constructor() {
 		super();
+		const shadowDom = this.attachShadow({mode: 'open'});
+		shadowDom.appendChild(this.template);
 		this.addEventListener('click', () => {
 			if (this.checked) {
 				this.checked = false;
@@ -24,11 +26,6 @@ class TeCheckmark extends HTMLElement {
 
 	static get observedAttributes() {
 		return ['checked'];
-	}
-
-	connectedCallback() {
-		const shadowDom = this.attachShadow({mode: 'open'});
-		shadowDom.appendChild(this.template);
 	}
 
 	get template() {
