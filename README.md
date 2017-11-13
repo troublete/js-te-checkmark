@@ -11,7 +11,7 @@ A checkbox alternative with no value, but caption and simple design.
 ## Install
 
 ```sh
-npm i -S troublete/te-checkmark
+npm i -S te-checkmark
 ```
 
 ## Usage
