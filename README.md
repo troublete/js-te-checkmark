@@ -17,7 +17,7 @@ npm i -S troublete/te-checkmark
 ## Usage
 
 ```html
-<te-checkmark>Optional</checkmark>
+<te-checkmark>Optional</te-checkmark>
 ```
 
 ## Properties
