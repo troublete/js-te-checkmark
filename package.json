@@ -1,6 +1,6 @@
 {
   "name": "te-checkmark",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Checkmark button custom element",
   "main": "te-checkmark.js",
   "scripts": {

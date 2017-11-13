@@ -26,22 +26,22 @@ class TeCheckmark extends HTMLElement {
 
 	connectedCallback() {
 		this.setAttribute('tabindex', '0');
-		this.setAttribute('role', 'button');
+		this.setAttribute('role', 'checkbox');
 		
 		if (this.checked) {
-			this.setAttribute('aria-pressed', 'true');
+			this.setAttribute('aria-checked', 'true');
 		} else {
-			this.setAttribute('aria-pressed', 'false');
+			this.setAttribute('aria-checked', 'false');
 		}
 	}
 
 	set checked(checked) {
 		if (checked) {
 			this.setAttribute('checked', '');
-			this.setAttribute('aria-pressed', 'true');
+			this.setAttribute('aria-checked', 'true');
 		} else {
 			this.removeAttribute('checked');
-			this.setAttribute('aria-pressed', 'false');
+			this.setAttribute('aria-checked', 'false');
 		}
 	}
 
