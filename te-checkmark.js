@@ -3,7 +3,19 @@ class TeCheckmark extends HTMLElement {
 		super();
 		const shadowDom = this.attachShadow({mode: 'open'});
 		shadowDom.appendChild(this.template);
+		
 		this.addEventListener('click', () => {
+			if (this.checked) {
+				this.checked = false;
+			} else {
+				this.checked = true;
+			}
+		});
+
+		this.addEventListener('keydown', e => {
+			if (e.keyCode !== 32 && e.keyCode !== 13) {
+				return;
+			}
 			if (this.checked) {
 				this.checked = false;
 			} else {
@@ -12,20 +24,29 @@ class TeCheckmark extends HTMLElement {
 		});
 	}
 
+	connectedCallback() {
+		this.setAttribute('tabindex', '0');
+		this.setAttribute('role', 'button');
+		
+		if (this.checked) {
+			this.setAttribute('aria-pressed', 'true');
+		} else {
+			this.setAttribute('aria-pressed', 'false');
+		}
+	}
+
 	set checked(checked) {
 		if (checked) {
 			this.setAttribute('checked', '');
+			this.setAttribute('aria-pressed', 'true');
 		} else {
 			this.removeAttribute('checked');
+			this.setAttribute('aria-pressed', 'false');
 		}
 	}
 
 	get checked() {
 		return this.hasAttribute('checked');
-	}
-
-	static get observedAttributes() {
-		return ['checked'];
 	}
 
 	get template() {
