@@ -3,7 +3,7 @@ class TeCheckmark extends HTMLElement {
 		super();
 		const shadowDom = this.attachShadow({mode: 'open'});
 		shadowDom.appendChild(this.template);
-		
+
 		this.addEventListener('click', () => {
 			if (this.checked) {
 				this.checked = false;
@@ -13,7 +13,7 @@ class TeCheckmark extends HTMLElement {
 		});
 
 		this.addEventListener('keydown', e => {
-			if (e.keyCode !== 32 && e.keyCode !== 13) {
+			if (e.keyCode !== 32 && e.keyCode !== 13) {
 				return;
 			}
 			if (this.checked) {
@@ -27,7 +27,7 @@ class TeCheckmark extends HTMLElement {
 	connectedCallback() {
 		this.setAttribute('tabindex', '0');
 		this.setAttribute('role', 'checkbox');
-		
+
 		if (this.checked) {
 			this.setAttribute('aria-checked', 'true');
 		} else {
